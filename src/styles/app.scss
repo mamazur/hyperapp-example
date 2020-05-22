@@ -1,0 +1,128 @@
+@import "variables";
+@import "form";
+@import "background";
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: $dark-gray;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  width: 100%;
+}
+.row {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .column, .column-style {
+    width: 40rem;
+  }
+}
+button {
+  background-color: $primary;
+  border: 0.1rem solid $primary;
+  border-radius: 0.4rem;
+  color: $initial-white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 3.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 3.8rem;
+  padding: 0 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 2rem 0;
+
+  &:focus,
+  &:hover {
+    background: $dark-gray;
+  }
+}
+
+.modal {
+  &-content {
+    background: $initial-white;
+    border-radius: 2rem;
+  }
+}
+
+@mixin helper-element{
+  color: $initial-white;
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+}
+
+@media (min-width: $-bp-min-desktop) {
+  body::before {
+    @include helper-element;
+    content: "desktop";
+    background: #001f3f;
+
+  }
+}
+
+@media (min-width: $-bp-min-tablet) and (max-width: $-bp-max-tablet) {
+  body::before {
+    @include helper-element;
+    content: "tablet";
+    background: #0074d9;
+  }
+}
+
+@media (min-width: $-bp-min-phablet) and (max-width: $-bp-max-phablet) {
+  body::before {
+    @include helper-element;
+    content: "phablet";
+    background: #7fdbff;
+  }
+  .row {
+    flex-direction: column;
+    .column {
+      width: 100%;
+    }
+  }
+  .column-style{
+    display:none;
+  }
+}
+
+@media (max-width: $-bp-max-phone) {
+  body::before {
+    @include helper-element;
+    content: "phone";
+    background: #39cccc;
+  }
+  .row {
+    flex-direction: column;
+    .column {
+      width: 100%;
+    }
+  }
+  .column-style{
+    display:none;
+  }
+}
