@@ -1,6 +1,6 @@
 @import "variables";
-@import "form";
 @import "background";
+@import "media";
 
 *,
 *:after,
@@ -69,60 +69,30 @@ button {
   }
 }
 
-@mixin helper-element{
-  color: $initial-white;
-  padding: 0.2rem 0.7rem;
-  border-radius: 0.3rem;
-  font-size: 1.1rem;
+input,
+textarea,
+select {
+	appearance: none;
+	background-color: transparent;
+	border: .1rem solid $light-gray;
+	border-radius: .4rem;
+	box-shadow: none;
+	box-sizing: inherit;
+	height: 3.8rem;
+	padding: .6rem 1.0rem;
+	width: 80%;
+
+	&:focus {
+		border-color: $primary;
+		outline: 0;
+	}
 }
 
-@media (min-width: $-bp-min-desktop) {
-  body::before {
-    @include helper-element;
-    content: "desktop";
-    background: #001f3f;
-
-  }
+label,
+legend {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 700;
+	margin-bottom: .5rem;
 }
 
-@media (min-width: $-bp-min-tablet) and (max-width: $-bp-max-tablet) {
-  body::before {
-    @include helper-element;
-    content: "tablet";
-    background: #0074d9;
-  }
-}
-
-@media (min-width: $-bp-min-phablet) and (max-width: $-bp-max-phablet) {
-  body::before {
-    @include helper-element;
-    content: "phablet";
-    background: #7fdbff;
-  }
-  .row {
-    flex-direction: column;
-    .column {
-      width: 100%;
-    }
-  }
-  .column-style{
-    display:none;
-  }
-}
-
-@media (max-width: $-bp-max-phone) {
-  body::before {
-    @include helper-element;
-    content: "phone";
-    background: #39cccc;
-  }
-  .row {
-    flex-direction: column;
-    .column {
-      width: 100%;
-    }
-  }
-  .column-style{
-    display:none;
-  }
-}
