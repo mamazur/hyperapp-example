@@ -24,7 +24,7 @@ Simple responsive application with weather API from openweathermap, browser loca
 ````
 Change some data, retrieve location, hit **Generate Card** button and enjoy.
 
-In order to use location retrieval - create **config.json** file in the project folder. You will need an API key from https://openweathermap.org/.
+In order to use location retrieval - create **config.js** file in the project folder. You will need an API key from https://openweathermap.org/.
 
 ````js
   export const config = {
