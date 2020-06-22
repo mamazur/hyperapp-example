@@ -6,10 +6,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .block {
   width: 125px;
   height: 125px;
 }
+
 .block-title {
   grid-column-start: 2;
   grid-column-end: -1;
@@ -30,9 +32,11 @@
 .style-1 {
   background: $dark-gray;
 }
+
 .style-7 {
   background: $primary;
 }
+
 .style-2 {
   width: 0;
   height: 0;
@@ -42,9 +46,11 @@
   background: $semi-dark-grey;
   padding-top: 1px;
 }
+
 .style-3 {
   background-image: linear-gradient(45deg, $primary 50%, $light-gray 50%);
 }
+
 .style-4 {
   background-image: linear-gradient(
     $light-gray,

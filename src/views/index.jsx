@@ -9,7 +9,7 @@ const updateField = (state, { target: { id: field, value } }) => ({
   ...state,
   [field]: value,
 });
-const open = (state) => ({ ...state, modalOpen: true });
+const open = (state) => ({ ...state, modal: true });
 
 export const View = (state) => (
   <div>

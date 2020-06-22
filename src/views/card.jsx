@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { h } from "hyperapp";
 
-const close = (state) => ({ ...state, modalOpen: false });
+const close = (state) => ({ ...state, modal: false });
 export const Card = ({ state }) => (
   <div
-    class={state.modalOpen && `modal`}
-    style={{ display: state.modalOpen ? "block" : "none" }}
+    class={state.modal && `modal`}
+    style={{ display: state.modal ? "block" : "none" }}
     onclick={close}
   >
     <div class="modal-content">

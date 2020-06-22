@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Maria Mazur <maria.mazur@outlook.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamazur/hyperapp-example.git"
+  },
   "scripts": {
     "dev": "parcel serve  index.html -p 3000",
     "build": "parcel build index.html"
