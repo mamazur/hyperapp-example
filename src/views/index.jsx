@@ -28,13 +28,16 @@ export const View = (state) => (
             Language
           </label>
           <select id="language" value={state.language} onInput={updateField}>
-            {Object.keys({ de: "Deutsch", en: "English", es: "Español" }).map(
-              (option) => (
-                <option value={option} selected={option === state.language}>
-                  {option}
-                </option>
-              )
-            )}
+            {[
+              { id: "de", name: "German" },
+              { id: "en", name: "English" },
+              { id: "fr", name: "French" },
+              { id: "jp", name: "Japanese" },
+            ].map((option) => (
+              <option value={option.id} selected={option.id === state.language}>
+                {option.name}
+              </option>
+            ))}
           </select>
         </div>
         <Field id="city" value={state.city} name="city" />
@@ -52,6 +55,5 @@ export const View = (state) => (
         </pre>
       </div>
     </div>
-
   </div>
 );
